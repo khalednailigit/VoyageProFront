@@ -1,44 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddmovieComponent } from './components/addmovie/addmovie.component';
-import { ProductdetailComponent } from './components/productdetail/productdetail.component';
-import { AddproductComponent } from './components/addproduct/addproduct.component';
-import { ListproductComponent } from './components/listproduct/listproduct.component';
-import { NavComponent } from './components/nav/nav.component';
-import { EventdetailComponent } from './components/eventdetail/eventdetail.component';
-import { LoginComponent } from './screens/auth/login/login.component';
-import { EditComponent } from './screens/post/edit/edit.component';
-import { CreateComponent } from './screens/post/create/create.component';
-import { ViewComponent } from './screens/post/view/view.component';
-import { IndexComponent } from './screens/post/index/index.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
+
+
 @NgModule({
+  imports: [
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ComponentsModule,
+    NgbModule,
+    RouterModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
-    AddmovieComponent,
-    ProductdetailComponent,
-    AddproductComponent,
-    ListproductComponent,
-    NavComponent,
-    IndexComponent,
-    ViewComponent,
-    CreateComponent,
-    EditComponent,
-    LoginComponent,
-    EventdetailComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-
+    AdminLayoutComponent,
+    AuthLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
